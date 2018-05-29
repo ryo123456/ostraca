@@ -12,14 +12,16 @@
       copy: 
         src: /var/lib/jenkins/ansible/index.html 
         dest: /var/www/html/index.html 
-        owner: ec2-user  
+        owner: ec2-user 
+        group: ec2-user 
         mode: 0644
     
     - name: copy logo
       copy: 
         src: /var/lib/jenkins/ansible/logo.png 
         dest: /var/www/html/logo.png 
-        owner: ec2-user  
+        owner: ec2-user
+        group: ec2-user  
         mode: 0644
 
     
