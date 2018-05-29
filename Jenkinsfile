@@ -11,7 +11,6 @@ node {
 
     stage('terraform'){
         dir("${tf_path}"){
-#            sh "${terraform} state show aws_lb_target_group_attachment.server1 | grep target_group_arn | grep Green > state.txt"
             sh "sh aws.sh"
         }
     }
