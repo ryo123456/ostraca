@@ -20,6 +20,10 @@ node {
         dir("${ansible_path}"){
             sh "rm -fr ostraca.yml"
             sh "wget https://github.com/ryo123456/ostraca/raw/master/playbook/ostraca.yml"
+            sh "rm -fr index.html"
+            sh "wget https://github.com/ryo123456/ostraca/raw/master/sources/index.html"
+            sh "rm -fr logo.png"
+            sh "wget https://github.com/ryo123456/ostraca/raw/master/sources/logo.png"
         }
     }
 
