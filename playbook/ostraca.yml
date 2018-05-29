@@ -1,0 +1,28 @@
+- hosts: server
+  user: ec2-user
+  sudo: yes
+  tasks:
+    - name: install Apache
+      yum: name=httpd state=latest
+
+    - name: enable & start service httpd
+      systemd: name=httpd state=started enabled=true
+
+    - name: create index.html
+      copy: 
+        src: /var/lib/jenkins/ansible/index.html 
+        dest: /var/www/html/index.html 
+        owner=ec2-user  
+        mode=0644
+    
+    - name: copy logo
+      copy: 
+        src: /var/lib/jenkins/ansible/logo.png 
+        dest: /var/www/html/logo.png 
+        owner=ec2-user  
+        mode=0644
+
+    
+    
+
+   
