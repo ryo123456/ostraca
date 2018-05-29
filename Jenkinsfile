@@ -28,7 +28,7 @@ node {
 
     stage('ansible'){
         dir("${ansible_path}"){
-            sh "ansible-playbook -i hosts ostraca.yml --private-key=~/.ssh/devops.pem -auto-approve"
+            sh "ansible-playbook -i hosts ostraca.yml --private-key=~/.ssh/devops.pem"
         }
     }
 
